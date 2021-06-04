@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>php_wrappers module &mdash; ExoFOP Python API 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ExoFOP Python API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">php_wrappers module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ExoFOP Python API</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>php_wrappers module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/php_wrappers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-php_wrappers">
+<span id="php-wrappers-module"></span><h1>php_wrappers module<a class="headerlink" href="#module-php_wrappers" title="Permalink to this headline">¶</a></h1>
+<p>Pytohn wrappers for PHP functions that are documented here:
+<a class="reference external" href="https://exofop.ipac.caltech.edu/tess/Introduction_to_ExoFOP_php_functions.php">https://exofop.ipac.caltech.edu/tess/Introduction_to_ExoFOP_php_functions.php</a></p>
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_imaging">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_imaging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_imaging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses all imaging observation summaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are:  id (TIC ID), tel, inst, filt, pix, imagetype, psf, cont, date, tag, notes, user, group.
+If <cite>sort</cite> is <cite>None</cite> or is an invalid column name, the result will be sorted by id.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p><cite>’pandas’</cite>: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p><cite>’csv’</cite>: save csv file to <cite>path</cite>.</p></li>
+<li><p><cite>’pipe’</cite>: save pipe-delimited file to <cite>path</cite>.</p></li>
+<li><p><cite>’text’</cite>: save text file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned. Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_nearbytarget">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_nearbytarget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_nearbytarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses nearby targets for a given TIC ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tic</strong> (<em>int</em>) – TIC ID.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are:  id (TIC ID), toi, ra, dec, pmra, pmdec, tmag, distance, separation.
+If <cite>sort</cite> is <cite>None</cite>, the result will be sorted by separation.
+If <cite>sort</cite> is an invalid column name, sort order is undefined.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p>pandas: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with index column set to TICs.</p></li>
+<li><p>csv: save csv file to <cite>path</cite>.</p></li>
+<li><p>pipe: save pipe-delimited file to <cite>path</cite>.</p></li>
+<li><p>text: save text file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned. Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_obsnotes">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_obsnotes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_obsnotes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses observing notes for the given TIC ID, tag, or row ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>str</em><em> or </em><em>int</em>) – Data tag (see <a class="reference external" href="https://exofop.ipac.caltech.edu/tess/tag_help.php">https://exofop.ipac.caltech.edu/tess/tag_help.php</a> for more information).
+Tag can be string or associated number.</p></li>
+<li><p><strong>tic</strong> (<em>int</em>) – TIC ID.</p></li>
+<li><p><strong>row_id</strong> (<em>int</em>) – Row ID associated with note.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p>pandas: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p>csv: save csv file to <cite>path</cite>.</p></li>
+<li><p>pipe: save pipe-delimited file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned.
+Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_spect">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_spect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_spect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses all spectroscopic observation summaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are: id (TIC ID), tel, inst, res, cov, snrres, snrwave, prv, date, tag, notes, user, group.
+If <cite>sort</cite> is <cite>None</cite> or is an invalid column name, the result will be sorted by id.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p><cite>’pandas’</cite>: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p><cite>’csv’</cite>: save csv file to <cite>path</cite>.</p></li>
+<li><p><cite>’pipe’</cite>: save pipe-delimited file to <cite>path</cite>.</p></li>
+<li><p><cite>’text’</cite>: save text file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned.
+Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_stellarcomp">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_stellarcomp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_stellarcomp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses all user-reported stellar companions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are:  id (TIC ID), lastmod (descending).
+If <cite>sort</cite> is <cite>None</cite> or is an invalid column name, the result will be sorted by id.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are</p>
+<ul>
+<li><p><cite>’pandas’</cite>: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p><cite>’csv’</cite>: save csv file to <cite>path</cite>.</p></li>
+<li><p><cite>’pipe’</cite>: save pipe-delimited file to <cite>path</cite>.</p></li>
+<li><p><cite>’text’</cite>: save text file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned.
+Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_tag_imaging">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_tag_imaging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_tag_imaging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses all imaging observation summaries for a given tag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>str</em><em> or </em><em>int</em>) – Data tag (see <a class="reference external" href="https://exofop.ipac.caltech.edu/tess/tag_help.php">https://exofop.ipac.caltech.edu/tess/tag_help.php</a> for more information).
+Tag can be string or associated number.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are:  id (TIC ID), tel, inst, filt, pix, imagetype, psf, cont, date, tag, notes, user, group.
+If <cite>sort</cite> is <cite>None</cite> or is an invalid column name, the result will be sorted by id.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p><cite>’pandas’</cite>: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p><cite>’csv’</cite>: save csv file to <cite>path</cite>.</p></li>
+<li><p><cite>’pipe’</cite>: save pipe-delimited file to <cite>path</cite>.</p></li>
+<li><p><cite>’text’</cite>: save text file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned.
+Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_tag_spect">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_tag_spect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_tag_spect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses all spectroscopic observation summaries for a given tag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>str</em><em> or </em><em>int</em>) – Data tag (see <a class="reference external" href="https://exofop.ipac.caltech.edu/tess/tag_help.php">https://exofop.ipac.caltech.edu/tess/tag_help.php</a> for more information).
+Tag can be string or associated number.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are: id (TIC ID), tel, inst, res, cov, snrres, snrwave, prv, date, tag, notes, user, group.
+If <cite>sort</cite> is <cite>None</cite> or is an invalid column name, the result will be sorted by id.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p><cite>’pandas’</cite>: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p><cite>’csv’</cite>: save csv file to <cite>path</cite>.</p></li>
+<li><p><cite>’pipe’</cite>: save pipe-delimited file to <cite>path</cite>.</p></li>
+<li><p><cite>’text’</cite>: save text file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned.
+Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_tag_tseries">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_tag_tseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_tag_tseries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses all time series observation summaries for a given tag.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>str</em><em> or </em><em>int</em>) – Data tag (see <a class="reference external" href="https://exofop.ipac.caltech.edu/tess/tag_help.php">https://exofop.ipac.caltech.edu/tess/tag_help.php</a> for more information).
+Tag can be string or associated number.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are: id (TIC ID), tel, camera, filt, pix, psf, photaprad, date, transcov, deltamag, tag, notes, user, group.
+If <cite>sort</cite> is <cite>None</cite> or is an invalid column name, the result will be sorted by id.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p><cite>’pandas’</cite>: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p><cite>’csv’</cite>: save csv file to <cite>path</cite>.</p></li>
+<li><p><cite>’pipe’</cite>: save pipe-delimited file to <cite>path</cite>.</p></li>
+<li><p><cite>’text’</cite>: save text file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned.
+Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_toi">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_toi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_toi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses the full TOI table from <a class="reference external" href="https://exofop.ipac.caltech.edu/tess/view_toi.php">https://exofop.ipac.caltech.edu/tess/view_toi.php</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>toi</strong> (<em>str</em><em> or </em><em>int</em><em>, </em><em>optional</em>) – Access table information for a specific TOI. Defaults to <cite>None</cite>.</p></li>
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are: tid, toidesc, toi, toiasc, master, sg1a, sg1b, sg2, sg3, sg4, sg5,
+acwg, tmag, planetrad, planetname, planetnum, planetinsol, planetteq, planetsnr,
+disposition, tfopwgdisp, source, ra, dec, pmra, pmdec, epoch, period, duration, depth,
+distance, teff, logg, rad, metallicity, sectors, toi_alerted, toi_edited.
+If <cite>sort</cite> is <cite>None</cite> or the provided sort column name is invalid, the result will be
+sorted by last modified time.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – Output of result. Available formats are:
+pandas: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with index column set to TOIs.
+csv: save csv file to <cite>path</cite>.
+pipe: save pipe-delimited file to <cite>path</cite>.
+text: save text file to <cite>path</cite>.
+Defaults to <cite>‘pandas’</cite>.</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned. Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_tseries">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_tseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_tseries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses all time series observation summaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sort</strong> (<em>str</em><em>, </em><em>optional</em>) – Column to sort by. Defaults to <cite>None</cite>.
+Available columns are: id (TIC ID), tel, camera, filt, pix, psf, photaprad, date, transcov, deltamag, tag, notes, user, group.
+If <cite>sort</cite> is <cite>None</cite> or is an invalid column name, the result will be sorted by id.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p><cite>’pandas’</cite>: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p><cite>’csv’</cite>: save csv file to <cite>path</cite>.</p></li>
+<li><p><cite>’pipe’</cite>: save pipe-delimited file to <cite>path</cite>.</p></li>
+<li><p><cite>’text’</cite>: save text file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned.
+Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="php_wrappers.download_user_tags">
+<span class="sig-prename descclassname"><span class="pre">php_wrappers.</span></span><span class="sig-name descname"><span class="pre">download_user_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#php_wrappers.download_user_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accesses list of user tags made by <cite>username</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> (<em>str</em><em>, </em><em>optional</em>) – username to search.
+If username is None, search is conducted on logged-in user’s username.</p></li>
+<li><p><strong>output</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Output of result. Available formats are:</p>
+<ul>
+<li><p>pandas: returns <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> object with default index column.</p></li>
+<li><p>csv: save csv file to <cite>path</cite>.</p></li>
+<li><p>pipe: save pipe-delimited file to <cite>path</cite>.</p></li>
+</ul>
+<p>Defaults to <cite>‘pandas’</cite>.</p>
+</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Path to save the result file to.
+Only relevant if result output is csv, pipe or text.</p>
+<ul>
+<li><p>If path provided is a file, the result will be written to that file.</p></li>
+<li><p>If path provided is a directory, the file will be saved in the given directory with a default filename.</p></li>
+<li><p>If <cite>path</cite> is <cite>None</cite>, the file will be saved in the current directory with a default filename.</p></li>
+</ul>
+<p>Defaults to <cite>None</cite>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if <cite>output=’pandas’</cite>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>
+object is returned.
+Else the result is saved to file and the function returns <cite>None</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Weijie Wang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
