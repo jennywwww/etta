@@ -6,4 +6,3 @@ github-exofop-api
 
    helpers
    php_wrappers
-   test
