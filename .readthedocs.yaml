@@ -11,5 +11,3 @@ python:
     - requirements: docs-source/requirements.txt
     - method: pip
       path: .
-      extra_requirements:
-        - docs-source
