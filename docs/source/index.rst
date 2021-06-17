@@ -1,8 +1,3 @@
-.. ExoFOP Python API documentation master file, created by
-   sphinx-quickstart on Thu Jun  3 18:39:32 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to ExoFOP Python API's documentation!
 =============================================
 
@@ -26,15 +21,13 @@ TOI                                      ...
 Fetching data from https://exofop.ipac.caltech.edu/tess/download_toi.php?output=pipe&toi=127
 Result written to /home/jenny/TSP/github-exofop-api/download_toi.php?output=pipe&toi=127
 
-
 .. toctree::
    :maxdepth: 1
    :caption: Getting Started
 
-Bug Reports & Questions
------------------------
-
-The ExoFOP Python API is an open source project under the MIT license. The source code is available on `GitHub`_. In case of any questions or problems, please contact us via the `Git Issues`_.
+   getting-started/about
+   getting-started/installation
+   getting-started/tutorial
 
 .. toctree::
    :maxdepth: 2
@@ -42,6 +35,11 @@ The ExoFOP Python API is an open source project under the MIT license. The sourc
 
    php_wrappers
    helpers
+
+Bug Reports & Questions
+-----------------------
+
+The ExoFOP Python API is an open source project under the MIT license. The source code is available on `GitHub`_. In case of any questions or problems, please contact us via the `Git Issues`_.
 
 Indices and tables
 ==================
