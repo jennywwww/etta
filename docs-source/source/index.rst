@@ -31,6 +31,10 @@ Result written to /home/jenny/TSP/github-exofop-api/download_toi.php?output=pipe
    :maxdepth: 1
    :caption: Getting Started
 
+Bug Reports & Questions
+-----------------------
+
+The ExoFOP Python API is an open source project under the MIT license. The source code is available on `GitHub`_. In case of any questions or problems, please contact us via the `Git Issues`_.
 
 .. toctree::
    :maxdepth: 2
@@ -45,3 +49,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+.. _GitHub: https://github.com/jennywwww/exofop-tess-api
+.. _Git Issues: https://github.com/jennywwww/exofop-tess-api/issues
