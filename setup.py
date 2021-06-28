@@ -9,7 +9,7 @@ from setuptools import setup
 
 
 setup(
-  name='ExoFOP Python API',
+  name='etta',
   license='MIT',
   author='Weijie Wang',
   author_email='jenny.wang2000@hotmail.com',
