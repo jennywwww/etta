@@ -1,9 +1,4 @@
-"""
-Pytohn wrappers for PHP functions that are documented here: 
-https://exofop.ipac.caltech.edu/tess/Introduction_to_ExoFOP_php_functions.php
-"""
-
-from helpers import write_to_path, create_url, call_php_function
+from .helpers import write_to_path, create_url, call_php_function
 
 def download_toi(toi=None, sort=None, output='pandas', path=None):
     """Accesses the full TOI table from https://exofop.ipac.caltech.edu/tess/view_toi.php

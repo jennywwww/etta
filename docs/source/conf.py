@@ -12,8 +12,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../..'))
-
+sys.path.insert(0, os.path.abspath('../../etta/php_wrappers.py'))
+sys.path.insert(0, os.path.abspath('../../etta/helpers.py'))
 
 # -- Project information -----------------------------------------------------
 
@@ -33,7 +33,8 @@ import sphinx_rtd_theme
 extensions = [
   'sphinx.ext.autodoc',
   'sphinx.ext.napoleon',
-  'sphinx_rtd_theme'
+  'sphinx_rtd_theme',
+  'nbsphinx'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,6 +45,7 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+add_module_names = False
 
 # -- Options for HTML output -------------------------------------------------
 

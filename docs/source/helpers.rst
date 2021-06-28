@@ -1,7 +1,6 @@
-helpers module
-==============
+etta.helpers module
+===================
 
-.. automodule:: helpers
+.. automodule:: etta.helpers
    :members:
    :undoc-members:
-   :show-inheritance:

@@ -9,13 +9,11 @@ from setuptools import setup
 
 
 setup(
-  name='ExoFOP Python API',
+  name='etta',
   license='MIT',
   author='Weijie Wang',
   author_email='jenny.wang2000@hotmail.com',
-  py_modules=[
-    'php_wrappers', 'helpers'
-  ],
+  packages=['etta'],
   url='https://github.com/jennywwww/exofop-tess-api',
   description='Wrappers for the ExoFOP-TESS PHP functions.',
   include_package_data=True,

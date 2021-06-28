@@ -1,8 +1,8 @@
-github-exofop-api
-=================
+etta
+====
 
 .. toctree::
    :maxdepth: 4
 
-   helpers
    php_wrappers
+   helpers
