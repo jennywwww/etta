@@ -1,3 +1,4 @@
 Sphinx==4.0.2
 sphinx_rtd_theme==0.5.2
 sphinxcontrib-napoleon==0.7
+nbsphinx==0.8.6
