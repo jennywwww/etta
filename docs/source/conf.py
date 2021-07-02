@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../../etta'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'ExoFOP Python API'
+project = 'etta'
 copyright = '2021, Weijie Wang'
 author = 'Weijie Wang'
 

@@ -1,7 +1,7 @@
-About the ExoFOP Python API
+About etta
 ===========================
 
-The ExoFOP Python API consists of a series of lightweight wrappers around
+``etta`` consists of a series of lightweight wrappers around
 the PHP functions which are offered by the Exoplanet Follow-up Observing Program for TESS (ExoFOP-TESS).
 You can read about the underlying PHP functions in the `ExoFOP-TESS documentation`_. 
 
