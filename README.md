@@ -2,7 +2,7 @@
 
 `etta` is a Python package which allows you to access data from the [Exoplanet Follow-up Observing Program for TESS (ExoFOP-TESS)](https://exofop.ipac.caltech.edu/tess/). The package consists of a series of lightweight wrappers around the [PHP functions](https://exofop.ipac.caltech.edu/tess/Introduction_to_ExoFOP_php_functions.php) which are offered by ExoFOP-TESS. 
 
-```python-repl
+```pycon
 >>> import etta
 >>> dataframe = etta.download_toi(toi=125)
 Fetching data from https://exofop.ipac.caltech.edu/tess/download_toi.php?output=pipe&toi=125
