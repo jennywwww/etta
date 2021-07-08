@@ -67,10 +67,12 @@ def download_nearbytarget(tic, sort=None, output='pandas', path=None):
     payload = {'output': output, 'sort': sort, 'id': tic}
     return call_php_function('download_nearbytarget', payload, path, 0)
 
-def download_imaging(sort=None, output='pandas', path=None):
+def download_imaging(target=None, sort=None, output='pandas', path=None):
     """Accesses all imaging observation summaries.
 
     Args:
+        target (str, optional): Target's TIC ID, TOI name (including TOI prefix), or a planet name recognized by the Exoplanet Archive.
+            Accepted formats: (nnnnnnnnn|TOInnn|TOInnn.nn|name).
         sort (str, optional): Column to sort by. Defaults to `None`.
             Available columns are:  id (TIC ID), tel, inst, filt, pix, imagetype, psf, cont, date, tag, notes, user, group.
             If `sort` is `None` or is an invalid column name, the result will be sorted by id.
@@ -95,7 +97,7 @@ def download_imaging(sort=None, output='pandas', path=None):
         :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
         object is returned. Else the result is saved to file and the function returns `None`.
     """
-    payload = {'output': output, 'sort': sort}
+    payload = {'target': target, 'output': output, 'sort': sort}
     return call_php_function('download_imaging', payload, path)
 
 def download_tag_imaging(tag, sort=None, output='pandas', path=None):
@@ -132,10 +134,12 @@ def download_tag_imaging(tag, sort=None, output='pandas', path=None):
     payload = {'tag': tag, 'output': output, 'sort': sort}
     return call_php_function('download_tag_imaging', payload, path)
 
-def download_spect(sort=None, output='pandas', path=None):
+def download_spect(target=None, sort=None, output='pandas', path=None):
     """Accesses all spectroscopic observation summaries.
 
     Args:
+        target (str, optional): Target's TIC ID, TOI name (including TOI prefix), or a planet name recognized by the Exoplanet Archive.
+            Accepted formats: (nnnnnnnnn|TOInnn|TOInnn.nn|name).
         sort (str, optional): Column to sort by. Defaults to `None`.
             Available columns are: id (TIC ID), tel, inst, res, cov, snrres, snrwave, prv, date, tag, notes, user, group.
             If `sort` is `None` or is an invalid column name, the result will be sorted by id.
@@ -161,7 +165,7 @@ def download_spect(sort=None, output='pandas', path=None):
         object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
-    payload = {'output': output, 'sort': sort}
+    payload = {'target': target, 'output': output, 'sort': sort}
     return call_php_function('download_spect', payload, path)
 
 def download_tag_spect(tag, sort=None, output='pandas', path=None):
@@ -198,10 +202,12 @@ def download_tag_spect(tag, sort=None, output='pandas', path=None):
     payload = {'tag': tag, 'output': output, 'sort': sort}
     return call_php_function('download_tag_spect', payload, path)
 
-def download_tseries(sort=None, output='pandas', path=None):
+def download_tseries(target=None, sort=None, output='pandas', path=None):
     """Accesses all time series observation summaries.
 
     Args:
+        target (str, optional): Target's TIC ID, TOI name (including TOI prefix), or a planet name recognized by the Exoplanet Archive.
+            Accepted formats: (nnnnnnnnn|TOInnn|TOInnn.nn|name).
         sort (str, optional): Column to sort by. Defaults to `None`.
             Available columns are: id (TIC ID), tel, camera, filt, pix, psf, photaprad, date, transcov, deltamag, tag, notes, user, group.
             If `sort` is `None` or is an invalid column name, the result will be sorted by id.
@@ -227,7 +233,7 @@ def download_tseries(sort=None, output='pandas', path=None):
         object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
-    payload = {'output': output, 'sort': sort}
+    payload = {'target': target, 'output': output, 'sort': sort}
     return call_php_function('download_tseries', payload, path)
 
 def download_tag_tseries(tag, sort=None, output='pandas', path=None):
@@ -328,10 +334,12 @@ def download_user_tags(username=None, output='pandas', path=None):
     payload = {'output': output, 'username': username}
     return call_php_function('download_user_tags', payload, path)
 
-def download_stellarcomp(sort=None, output='pandas', path=None):
+def download_stellarcomp(target=None, sort=None, output='pandas', path=None):
     """Accesses all user-reported stellar companions.
 
     Args:
+        target (str, optional): Target's TIC ID, TOI name (including TOI prefix), or a planet name recognized by the Exoplanet Archive.
+            Accepted formats: (nnnnnnnnn|TOInnn|TOInnn.nn|name).
         sort (str, optional): Column to sort by. Defaults to `None`.
             Available columns are:  id (TIC ID), lastmod (descending).
             If `sort` is `None` or is an invalid column name, the result will be sorted by id.
@@ -357,5 +365,5 @@ def download_stellarcomp(sort=None, output='pandas', path=None):
         object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
-    payload = {'output': output, 'sort': sort}
+    payload = {'target': target, 'output': output, 'sort': sort}
     return call_php_function('download_stellarcomp', payload, path)
