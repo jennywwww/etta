@@ -14,7 +14,7 @@ setup(
   author='Weijie Wang',
   author_email='jenny.wang2000@hotmail.com',
   packages=['etta'],
-  url='https://github.com/jennywwww/exofop-tess-api',
+  url='https://github.com/jennywwww/etta',
   description='Wrappers for the ExoFOP-TESS PHP functions.',
   include_package_data=True,
   package_data={'': ['README.md', 'LICENSE']},

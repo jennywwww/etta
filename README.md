@@ -22,12 +22,12 @@ Result written to /home/jenny/TSP/github-exofop-api/download_toi.php?output=pipe
 You can install the current development version of etta:
 
 ```bash
-git clone https://github.com/jennywwww/exofop-tess-api.git
-cd exofop-tess-api
+git clone https://github.com/jennywwww/etta.git
+cd etta
 python setup.py install
 ```
 
 ## More information
-For more information, please refer to the [documentation](https://exofop-tess-api.readthedocs.io/en/latest/index.html). 
+For more information, please refer to the [documentation](https://etta.readthedocs.io/en/latest/index.html). 
 
-`etta` is an open source project under the MIT license. In case of any questions or problems, please contact us via the [Git Issues](https://github.com/jennywwww/exofop-tess-api/issues).
+`etta` is an open source project under the MIT license. In case of any questions or problems, please contact us via the [Git Issues](https://github.com/jennywwww/etta/issues).

@@ -48,6 +48,6 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-.. _GitHub: https://github.com/jennywwww/exofop-tess-api
-.. _Git Issues: https://github.com/jennywwww/exofop-tess-api/issues
+.. _GitHub: https://github.com/jennywwww/etta
+.. _Git Issues: https://github.com/jennywwww/etta/issues
 .. _ExoFOP-TESS PHP functions: https://exofop.ipac.caltech.edu/tess/Introduction_to_ExoFOP_php_functions.php

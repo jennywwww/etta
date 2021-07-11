@@ -3,6 +3,6 @@ Installation
 
 You can install the current development version of etta::
 
-  git clone https://github.com/jennywwww/exofop-tess-api.git
-  cd exofop-tess-api
-  pip install -r requirements.txt
+  git clone https://github.com/jennywwww/etta.git
+  cd etta
+  python setup.py install
