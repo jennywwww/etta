@@ -8,7 +8,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
   name='etta',
-  version='0.1.0',
+  version='0.1.1',
   license='MIT',
   author='Weijie Wang',
   author_email='jenny.wang2000@hotmail.com',
