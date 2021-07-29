@@ -5,6 +5,7 @@ Unit tests for helpers module.
 from etta.helpers import create_url, write_to_path, call_php_function
 from tools import FileCheck
 from pandas import DataFrame
+from astropy.table import Table
 import os
 
 def test_create_url():
@@ -16,6 +17,12 @@ def test_call_php_function_pandas():
     payload = {'output': 'pandas', 'toi': 251}
     res = call_php_function('download_toi', payload)
     assert isinstance(res, DataFrame)
+    assert len(res) >= 1
+
+def test_call_php_function_astropy():
+    payload = {'output': 'astropy', 'toi': 251}
+    res = call_php_function('download_toi', payload)
+    assert isinstance(res, Table)
     assert len(res) >= 1
 
 def test_call_php_function_file():

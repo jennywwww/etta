@@ -1,6 +1,7 @@
 import requests
 import os
 import pandas as pd
+from astropy.table import Table
 
 base_url = 'https://exofop.ipac.caltech.edu/tess/'
 
@@ -31,11 +32,16 @@ def call_php_function(func_name, payload, path=None, index_col=None):
     """
     url = create_url(func_name, payload)
     print(f'Fetching data from {url}')
-    if payload['output'] == 'pandas':
+    is_astropy = (payload['output'] == 'astropy')
+    if payload['output'] == 'pandas' or is_astropy:
         if index_col == None:
-            return pd.read_csv(url, delimiter='|')
+            df = pd.read_csv(url, delimiter='|')
+            print(df)
+            print(Table.from_pandas(df))
+            return Table.from_pandas(df) if is_astropy else df
         else:
-            return pd.read_csv(url, delimiter='|', index_col=index_col)
+            df = pd.read_csv(url, delimiter='|', index_col=index_col)
+            return Table.from_pandas(df) if is_astropy else df
     write_to_path(path, url)
 
 def write_to_path(path, url, default_filename=None):
@@ -78,7 +84,10 @@ def create_url(func_name, param_dict):
     url = f'{base_url}{func_name}.php?'
     qsPairs = []
     for key, value in param_dict.items():
+        print(key, value)
         if (key, value) == ('output', 'pandas'):
+            value = 'pipe'
+        if (key, value) == ('output', 'astropy'):
             value = 'pipe'
         if value:
             qsPairs.append(f'{key}={value}')
