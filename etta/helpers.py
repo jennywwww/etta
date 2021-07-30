@@ -36,8 +36,6 @@ def call_php_function(func_name, payload, path=None, index_col=None):
     if payload['output'] == 'pandas' or is_astropy:
         if index_col == None:
             df = pd.read_csv(url, delimiter='|')
-            print(df)
-            print(Table.from_pandas(df))
             return Table.from_pandas(df) if is_astropy else df
         else:
             df = pd.read_csv(url, delimiter='|', index_col=index_col)
@@ -84,10 +82,7 @@ def create_url(func_name, param_dict):
     url = f'{base_url}{func_name}.php?'
     qsPairs = []
     for key, value in param_dict.items():
-        print(key, value)
-        if (key, value) == ('output', 'pandas'):
-            value = 'pipe'
-        if (key, value) == ('output', 'astropy'):
+        if key == 'output' and value in ('pandas', 'astropy'):
             value = 'pipe'
         if value:
             qsPairs.append(f'{key}={value}')

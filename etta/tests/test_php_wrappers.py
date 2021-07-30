@@ -13,11 +13,18 @@ These tests take a VERY long time, upwards of 30 minutes (on my local machine).
 from etta.php_wrappers import *
 from tools import FileCheck
 from pandas import DataFrame
+from astropy.table import Table
 import os
 import pytest
 
 def wrapper_tester(func, params, expected_rows, expected_cols):
     res = func(**params)
+    assert isinstance(res, DataFrame)
+    assert len(res) >= expected_rows
+    assert len(res.columns) >= expected_cols
+
+    res = func(**params, output='astropy')
+    assert isinstance(res, Table)
     assert len(res) >= expected_rows
     assert len(res.columns) >= expected_cols
 
