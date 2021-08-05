@@ -14,11 +14,11 @@ def download_toi(toi=None, sort=None, output='pandas', path=None):
             sorted by last modified time.
         output (str, optional): Output of result. Available formats are:
 
-            * pandas: returns :py:class:`pandas.DataFrame` object with index column set to TOIs.
-            * astropy: returns :py:class:`astropy.table.Table` object.
-            * csv: save csv file to `path`.
-            * pipe: save pipe-delimited file to `path`.
-            * text: save text file to `path`.
+            * `'pandas'`: returns :py:class:`pandas.DataFrame` object with index column set to TOIs.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
+            * `'csv'`: save csv file to `path`.
+            * `'pipe'`: save pipe-delimited file to `path`.
+            * `'text'`: save text file to `path`.
 
             Defaults to `'pandas'`.
         path (str, optional): Path to save the result file to. 
@@ -48,11 +48,11 @@ def download_nearbytarget(tic, sort=None, output='pandas', path=None):
             If `sort` is an invalid column name, sort order is undefined.
         output (str, optional): Output of result. Available formats are:
 
-            * pandas: returns :py:class:`pandas.DataFrame` object with index column set to TICs.
-            * astropy: returns :py:class:`astropy.table.Table` object.
-            * csv: save csv file to `path`.
-            * pipe: save pipe-delimited file to `path`.
-            * text: save text file to `path`.
+            * `'pandas'`: returns :py:class:`pandas.DataFrame` object with index column set to TICs.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
+            * `'csv'`: save csv file to `path`.
+            * `'pipe'`: save pipe-delimited file to `path`.
+            * `'text'`: save text file to `path`.
 
             Defaults to `'pandas'`.
         path (str, optional): Path to save the result file to. 
@@ -83,6 +83,7 @@ def download_uploads(target=None, sort=None, output='pandas', path=None):
         output (str, optional): Output of result. Available formats are:
             
             * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
             * `'csv'`: save csv file to `path`.
             * `'pipe'`: save pipe-delimited file to `path`.
             * `'text'`: save text file to `path`.
@@ -116,6 +117,7 @@ def download_imaging(target=None, sort=None, output='pandas', path=None):
         output (str, optional): Output of result. Available formats are:
             
             * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
             * `'csv'`: save csv file to `path`.
             * `'pipe'`: save pipe-delimited file to `path`.
             * `'text'`: save text file to `path`.
@@ -149,6 +151,7 @@ def download_tag_imaging(tag, sort=None, output='pandas', path=None):
         output (str, optional): Output of result. Available formats are:
             
             * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
             * `'csv'`: save csv file to `path`.
             * `'pipe'`: save pipe-delimited file to `path`.
             * `'text'`: save text file to `path`.
@@ -183,6 +186,7 @@ def download_spect(target=None, sort=None, output='pandas', path=None):
         output (str, optional): Output of result. Available formats are:
             
             * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
             * `'csv'`: save csv file to `path`.
             * `'pipe'`: save pipe-delimited file to `path`.
             * `'text'`: save text file to `path`.
@@ -217,6 +221,7 @@ def download_tag_spect(tag, sort=None, output='pandas', path=None):
         output (str, optional): Output of result. Available formats are:
             
             * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
             * `'csv'`: save csv file to `path`.
             * `'pipe'`: save pipe-delimited file to `path`.
             * `'text'`: save text file to `path`.
@@ -251,6 +256,7 @@ def download_tseries(target=None, sort=None, output='pandas', path=None):
         output (str, optional): Output of result. Available formats are:
             
             * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
             * `'csv'`: save csv file to `path`.
             * `'pipe'`: save pipe-delimited file to `path`.
             * `'text'`: save text file to `path`.
@@ -285,6 +291,7 @@ def download_tag_tseries(tag, sort=None, output='pandas', path=None):
         output (str, optional): Output of result. Available formats are:
             
             * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
             * `'csv'`: save csv file to `path`.
             * `'pipe'`: save pipe-delimited file to `path`.
             * `'text'`: save text file to `path`.
@@ -317,10 +324,10 @@ def download_obsnotes(tag=None, tic=None, row_id=None, output='pandas', path=Non
         row_id (int): Row ID associated with note.
         output (str, optional): Output of result. Available formats are:
                         
-            * pandas: returns :py:class:`pandas.DataFrame` object with default index column.
-            * astropy: returns :py:class:`astropy.table.Table` object.
-            * csv: save csv file to `path`.
-            * pipe: save pipe-delimited file to `path`.
+            * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
+            * `'csv'`: save csv file to `path`.
+            * `'pipe'`: save pipe-delimited file to `path`.
             
             Defaults to `'pandas'`.
         path (str, optional): Path to save the result file to. 
@@ -350,10 +357,10 @@ def download_user_tags(username=None, output='pandas', path=None):
             If username is None, search is conducted on logged-in user's username.
         output (str, optional): Output of result. Available formats are:
             
-            * pandas: returns :py:class:`pandas.DataFrame` object with default index column.
-            * astropy: returns :py:class:`astropy.table.Table` object.
-            * csv: save csv file to `path`.
-            * pipe: save pipe-delimited file to `path`.
+            * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
+            * `'csv'`: save csv file to `path`.
+            * `'pipe'`: save pipe-delimited file to `path`.
             
             Defaults to `'pandas'`.
         path (str, optional): Path to save the result file to. 
