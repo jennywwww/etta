@@ -57,6 +57,28 @@ def test_download_nearbytarget():
         expected_cols=14
     )
 
+def test_download_uploads():
+    wrapper_tester(
+        download_uploads,
+        {'target': 'Kepler-633'},
+        expected_rows=2,
+        expected_cols=9
+    )
+
+    wrapper_tester(
+        download_uploads,
+        {'target': 63898957},
+        expected_rows=1,
+        expected_cols=9
+    )
+
+    wrapper_tester(
+        download_uploads,
+        {'target': 'TOI286'},
+        expected_rows=1,
+        expected_cols=9
+    )
+
 def test_download_imaging_single():
     wrapper_tester(
         download_imaging,

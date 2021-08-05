@@ -71,6 +71,39 @@ def download_nearbytarget(tic, sort=None, output='pandas', path=None):
     payload = {'output': output, 'sort': sort, 'id': tic}
     return call_php_function('download_nearbytarget', payload, path, 0)
 
+def download_uploads(target=None, sort=None, output='pandas', path=None):
+    """Download number of user-uploaded contributions in each contribution category: 
+    Time Series Observations, Spectroscopy Observations, Imaging Observations, Files, 
+    Observation Notes, Stellar Parameters, Stellar Companion Parameters, and Planet Parameters. 
+    If a given target has multiple TIC IDs associated with it, then data will be provided for each TIC.
+
+    Args:
+        target (str, optional): Target's TIC ID, TOI name (including TOI prefix), or star name.
+            Accepted formats: (nnnnnnnnn|TOInnn|star_name).
+        output (str, optional): Output of result. Available formats are:
+            
+            * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'csv'`: save csv file to `path`.
+            * `'pipe'`: save pipe-delimited file to `path`.
+            * `'text'`: save text file to `path`.
+
+            Defaults to `'pandas'`.
+        path (str, optional): Path to save the result file to. 
+            Only relevant if result output is csv, pipe or text.
+
+            * If path provided is a file, the result will be written to that file.
+            * If path provided is a directory, the file will be saved in the given directory with a default filename.
+            * If `path` is `None`, the file will be saved in the current directory with a default filename.
+            
+            Defaults to `None`.
+
+    Returns:
+        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. Else the result is saved to file and the function returns `None`.
+    """
+    payload = {'target': target, 'output': output}
+    return call_php_function('download_uploads', payload, path)
+
 def download_imaging(target=None, sort=None, output='pandas', path=None):
     """Accesses all imaging observation summaries.
 
