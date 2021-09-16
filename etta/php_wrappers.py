@@ -31,8 +31,9 @@ def download_toi(toi=None, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. Else the result is saved to file and the function returns `None`.
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
+        Else the result is saved to file and the function returns `None`.
     """
     payload = {'output': output, 'sort': sort, 'toi': toi}
     return call_php_function('download_toi', payload, path, 1)
@@ -65,8 +66,9 @@ def download_nearbytarget(tic, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. Else the result is saved to file and the function returns `None`.
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
+        Else the result is saved to file and the function returns `None`.
     """
     payload = {'output': output, 'sort': sort, 'id': tic}
     return call_php_function('download_nearbytarget', payload, path, 0)
@@ -99,8 +101,9 @@ def download_uploads(target=None, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. Else the result is saved to file and the function returns `None`.
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
+        Else the result is saved to file and the function returns `None`.
     """
     payload = {'target': target, 'output': output}
     return call_php_function('download_uploads', payload, path)
@@ -133,8 +136,9 @@ def download_imaging(target=None, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. Else the result is saved to file and the function returns `None`.
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
+        Else the result is saved to file and the function returns `None`.
     """
     payload = {'target': target, 'output': output, 'sort': sort}
     return call_php_function('download_imaging', payload, path)
@@ -167,8 +171,8 @@ def download_tag_imaging(tag, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. 
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
     payload = {'tag': tag, 'output': output, 'sort': sort}
@@ -202,8 +206,8 @@ def download_spect(target=None, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. 
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
     payload = {'target': target, 'output': output, 'sort': sort}
@@ -237,8 +241,8 @@ def download_tag_spect(tag, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. 
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
     payload = {'tag': tag, 'output': output, 'sort': sort}
@@ -272,8 +276,8 @@ def download_tseries(target=None, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. 
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
     payload = {'target': target, 'output': output, 'sort': sort}
@@ -307,8 +311,8 @@ def download_tag_tseries(tag, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. 
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
     payload = {'output': output, 'tag': tag, 'sort': sort}
@@ -340,8 +344,8 @@ def download_obsnotes(tag=None, tic=None, row_id=None, output='pandas', path=Non
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. 
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
     if not (tag or tic or row_id):
@@ -373,8 +377,8 @@ def download_user_tags(username=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. 
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
     payload = {'output': output, 'username': username}
@@ -392,6 +396,7 @@ def download_stellarcomp(target=None, sort=None, output='pandas', path=None):
         output (str, optional): Output of result. Available formats are
 
             * `'pandas'`: returns :py:class:`pandas.DataFrame` object with default index column.
+            * `'astropy'`: returns :py:class:`astropy.table.Table` object.
             * `'csv'`: save csv file to `path`.
             * `'pipe'`: save pipe-delimited file to `path`.
             * `'text'`: save text file to `path`.
@@ -407,8 +412,8 @@ def download_stellarcomp(target=None, sort=None, output='pandas', path=None):
             Defaults to `None`.
 
     Returns:
-        :py:class:`pandas.DataFrame` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
-        object is returned. 
+        :py:class:`pandas.DataFrame` or :py:class:`astropy.table.Table` or `None`: if `output='pandas'`, a :py:class:`pandas.DataFrame`
+        object is returned. If `output='astropy'`, a :py:class:`astropy.table.Table` object is returned. 
         Else the result is saved to file and the function returns `None`.
     """
     payload = {'target': target, 'output': output, 'sort': sort}

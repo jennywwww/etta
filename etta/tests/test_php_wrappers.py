@@ -18,16 +18,19 @@ import os
 import pytest
 
 def wrapper_tester(func, params, expected_rows, expected_cols):
+    # Test default output (pandas.DataFrame)
     res = func(**params)
     assert isinstance(res, DataFrame)
     assert len(res) >= expected_rows
     assert len(res.columns) >= expected_cols
 
+    # Test astropy output (astropy.table.Table)
     res = func(**params, output='astropy')
     assert isinstance(res, Table)
     assert len(res) >= expected_rows
     assert len(res.columns) >= expected_cols
 
+    # Test file download (csv)
     filename = f'test_{func.__name__}.csv'
     with FileCheck(filename) as file_check:
         res = func(**params, output='csv', path=filename)
