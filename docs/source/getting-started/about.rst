@@ -13,4 +13,16 @@ The package contains two modules:
 * helpers
     Contains helper functions used by php_wrappers. Provides a more flexible and extensible way to call ExoFOP-TESS PHP functions.
 
+Versioning
+----------
+The documentation contains three versions:
+
+* stable
+    Corresponds to the latest PyPi release.
+* latest
+    Corresponds to the main branch in the GitHub repo.
+* dev
+    Corresponds to the dev branch in the GitHub repo. Contains the most up-to-date code. 
+    Documentation may not accurately reflect the code. Code may not have been tested yet.
+
 .. _ExoFOP-TESS documentation: https://exofop.ipac.caltech.edu/tess/Introduction_to_ExoFOP_php_functions.php

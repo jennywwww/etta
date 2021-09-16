@@ -25,6 +25,7 @@ setup(
   install_requires=[
     'pandas>=1.0.0',
     'requests>=2.23.0',
+    'astropy>=4.0.0',
     'setuptools>=41.0.0'
   ],
   classifiers=[

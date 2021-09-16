@@ -13,14 +13,24 @@ These tests take a VERY long time, upwards of 30 minutes (on my local machine).
 from etta.php_wrappers import *
 from tools import FileCheck
 from pandas import DataFrame
+from astropy.table import Table
 import os
 import pytest
 
 def wrapper_tester(func, params, expected_rows, expected_cols):
+    # Test default output (pandas.DataFrame)
     res = func(**params)
+    assert isinstance(res, DataFrame)
     assert len(res) >= expected_rows
     assert len(res.columns) >= expected_cols
 
+    # Test astropy output (astropy.table.Table)
+    res = func(**params, output='astropy')
+    assert isinstance(res, Table)
+    assert len(res) >= expected_rows
+    assert len(res.columns) >= expected_cols
+
+    # Test file download (csv)
     filename = f'test_{func.__name__}.csv'
     with FileCheck(filename) as file_check:
         res = func(**params, output='csv', path=filename)
@@ -48,6 +58,28 @@ def test_download_nearbytarget():
         {'tic': 278683844, 'sort': 'tmag'},
         expected_rows=12,
         expected_cols=14
+    )
+
+def test_download_uploads():
+    wrapper_tester(
+        download_uploads,
+        {'target': 'Kepler-633'},
+        expected_rows=2,
+        expected_cols=9
+    )
+
+    wrapper_tester(
+        download_uploads,
+        {'target': 63898957},
+        expected_rows=1,
+        expected_cols=9
+    )
+
+    wrapper_tester(
+        download_uploads,
+        {'target': 'TOI286'},
+        expected_rows=1,
+        expected_cols=9
     )
 
 def test_download_imaging_single():
