@@ -16,6 +16,7 @@ The package contains two modules:
 Versioning
 ----------
 The documentation contains three versions:
+
 * stable
     Corresponds to the latest PyPi release.
 * latest
